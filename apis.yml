@@ -1,8 +1,29 @@
 aid: alethea
 name: Alethea
-description: 'Alethea is a company surfaced as a portfolio company of gv, multicoin-capital and added
-  to the API Evangelist network as a stub for enrichment. Sector: ai. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Alethea is an AI-powered risk intelligence company that operates a proactive
+  narrative and disinformation risk management platform. Its flagship product,
+  Artemis, is a threat intelligence and narrative-risk mitigation platform that
+  detects coordinated inauthentic behavior, influence operations, and emerging
+  online narratives before they escalate into reputational or operational
+  crises. Complementary offerings include Risk Radar (a threat-visibility
+  dashboard), an agentic AI takedown agent for automated mitigation, and Alethea
+  Insights macro threat analysis. The company was surfaced as a portfolio
+  company of GV and Multicoin Capital and added to the API Evangelist network.
+  Alethea is an enterprise, engagement-led platform and does not currently
+  publish a public developer API, SDKs, or a self-service developer portal.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://alethea.com/hubfs/raw_assets/public/alethea-theme/images/social-sharing.png
 url: https://raw.githubusercontent.com/api-evangelist/alethea/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -17,6 +38,12 @@ modified: '2026-07-17'
 tags:
 - Company
 - Ai
+- Threat Intelligence
+- Narrative Risk
+- Disinformation Detection
+- Risk Management
+- Reputation Management
+- Cybersecurity
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -26,3 +53,18 @@ maintainers:
 common:
 - type: Website
   url: https://alethea.com/
+- type: Blog
+  url: https://alethea.com/insights
+- type: Support
+  url: https://alethea.com/contact
+- type: PrivacyPolicy
+  url: https://alethea.com/privacy
+- type: TermsOfService
+  url: https://alethea.com/disclosures
+- type: DomainSecurity
+  url: security/alethea-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
