@@ -34,7 +34,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-08-13'
 tags:
 - Company
 - Ai
@@ -63,8 +63,46 @@ common:
   url: https://alethea.com/disclosures
 - type: DomainSecurity
   url: security/alethea-domain-security.yml
+- type: LLMsTxt
+  url: llms/alethea-llms.txt
+- type: Plans
+  url: plans/alethea-plans-pricing.yml
+- type: Application
+  url: https://artemis.alethea.com/
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-13'
+  status: minimal
+  artifacts_added: 4
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+  note: >-
+    Contract discovery ran against alethea.com and artemis.alethea.com. No
+    published contract exists; the Artemis application backend is 401-gated.
+    Previous stamp: 2026-07-19 backfilled.
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    Alethea's own Artemis page advertises "a robust external API" for integrating
+    Artemis data into customer workflows, but publishes no reference, no spec and
+    no developer portal for it — every platform page terminates in a "Request a
+    Demo" form, and the only live API, the Artemis app backend at
+    artemis.alethea.com/api/v2 and /api/v3, answers 401 to every unauthenticated
+    request.
+  evidence:
+  - url: https://alethea.com/platform/artemis
+    status: 200
+  - url: https://artemis.alethea.com/api/v2/user/current
+    status: 401
+  - url: https://artemis.alethea.com/api/v3/insights
+    status: 401
+  - url: https://artemis.alethea.com/openapi.json
+    status: 200
+    note: >-
+      HTTP 200 but the body is the 3,468-byte React SPA shell, not a spec —
+      recorded as a miss. docs./api./developer./developers.alethea.com do not
+      resolve in DNS.
+  - url: https://alethea.com/llms.txt
+    status: 404
+  - url: https://alethea.com/.well-known/api-catalog
+    status: 404
+  checked: '2026-08-13'
