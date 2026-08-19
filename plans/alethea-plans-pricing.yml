@@ -1,0 +1,25 @@
+generated: '2026-08-13'
+method: searched
+source: https://alethea.com/ (full sitemap walk, 2026-08-13)
+plan_count: 0
+currency: null
+note: >-
+  Alethea publishes no pricing, plans, tiers or quotas of any kind. The full
+  XML sitemap (https://alethea.com/sitemap.xml, HTTP 200) contains no /pricing,
+  /plans or /packages URL — the site is company, platform, solutions, insights,
+  team and legal pages only. Every platform page (Artemis, Risk Radar,
+  Takedowns, Alethea Insights) terminates in a "Request a Demo" call to action
+  that resolves to https://alethea.com/contact. This is an enterprise,
+  engagement-led commercial motion with no self-service tier and no published
+  list price.
+searched:
+- url: https://alethea.com/sitemap.xml
+  status: 200
+  finding: no pricing or plans URL present
+- url: https://alethea.com/platform/artemis
+  status: 200
+  finding: '"Request a Demo" CTA; no price, tier or quota stated'
+- url: https://alethea.com/contact
+  status: 200
+  finding: contact/demo request form stands in for pricing
+plans: []

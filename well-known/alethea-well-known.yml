@@ -1,0 +1,95 @@
+generated: '2026-08-13'
+method: probed
+source: live unauthenticated GET of /.well-known/* on every Alethea host
+note: >-
+  Nothing was found. alethea.com (HubSpot CMS) returns a hard 404 for every
+  /.well-known/ path probed. artemis.alethea.com — the customer application —
+  returns HTTP 200 for every path, but the body is the identical 3,468-byte
+  React single-page-app shell (title "AG Artemis"), not a document; those 200s
+  are SPA catch-all false positives and are recorded as MISSES. No WellKnown
+  and no SecurityTxt pointer is emitted in apis.yml, because the provider does
+  not in fact serve any of these surfaces.
+hosts:
+- host: alethea.com
+  kind: marketing site (HubSpot CMS)
+  paths:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /llms.txt
+    status: 404
+    file: null
+- host: artemis.alethea.com
+  kind: >-
+    customer application — React SPA served by Express (x-powered-by: Express)
+    with a gunicorn API backend mounted at /api
+
+  paths:
+  - path: /.well-known/security.txt
+    status: 200
+    result: spa-shell
+    content_type: text/html
+    bytes: 3468
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 200
+    result: spa-shell
+    content_type: text/html
+    bytes: 3468
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    result: spa-shell
+    content_type: text/html
+    bytes: 3468
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    result: spa-shell
+    content_type: text/html
+    bytes: 3468
+    file: null
+  - path: /.well-known/api-catalog
+    status: 200
+    result: spa-shell
+    content_type: text/html
+    bytes: 3468
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 200
+    result: spa-shell
+    content_type: text/html
+    bytes: 3468
+    file: null
+  - path: /.well-known/agent.json
+    status: 200
+    result: spa-shell
+    content_type: text/html
+    bytes: 3468
+    file: null
+  - path: /llms.txt
+    status: 200
+    result: spa-shell
+    content_type: text/html
+    bytes: 3468
+    file: null
+hits: 0
+files: []

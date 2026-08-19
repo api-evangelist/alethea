@@ -1,0 +1,26 @@
+generated: '2026-08-13'
+method: searched
+source: https://alethea.com/ (full sitemap walk, 2026-08-13)
+limit_count: 0
+note: >-
+  No rate limits are published. Alethea has no developer portal, no API
+  reference and no public documentation of any kind, so there is nothing to
+  read a limit, window, burst or response header from. The Artemis application
+  backend (https://artemis.alethea.com/api/v2, /api/v3) answers 401 to every
+  unauthenticated request and returns no RateLimit-*, X-RateLimit-* or
+  Retry-After header on the challenge, so nothing could be observed live
+  either. NO `type: RateLimits` POINTER IS WIRED IN apis.yml on purpose — the
+  agent-readiness `rate_limit_signal` check credits a provider for the mere
+  presence of that pointer, and Alethea publishes no rate-limit signal at all.
+  This file records a measured zero, not a surface.
+observed:
+- url: https://artemis.alethea.com/api/v2/user/current
+  status: 401
+  rate_limit_headers: []
+- url: https://artemis.alethea.com/api/v3/insights
+  status: 401
+  rate_limit_headers: []
+- url: https://artemis.alethea.com/api/health
+  status: 200
+  rate_limit_headers: []
+rate_limits: []
